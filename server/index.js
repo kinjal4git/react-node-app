@@ -5,6 +5,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const bodyParser = require("body-parser");
+const cors = require('cors');
 
 const db = "mongodb+srv://demouser:ge4R05Lw6h17l3B9@db-mongodb-nyc3-43466-e2d29d23.mongo.ondigitalocean.com/admin?authSource=admin&replicaSet=db-mongodb-nyc3-43466&tls=true";
 
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(cors());
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
